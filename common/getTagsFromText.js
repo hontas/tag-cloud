@@ -10,7 +10,9 @@ module.exports = function getTagsFrom(text, options = { stopWords: [] }) {
   if (typeof text !== 'string') throw Error('Expected argument to be of type string');
 
   // TODO: add options like should words be lowercased, minimum word length etc
-  // improve tokenizing, add stemming etc
+  // improve tokenizing, add stemming ex:
+  // natural.PorterStemmer.attach();
+  // text.tokenizeAndStem();
 
   const tags = tokenizer
     .tokenize(text)

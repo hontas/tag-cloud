@@ -3,6 +3,7 @@ const cleanTweet = require('./utils/cleanTweet');
 const getTagsFromText = require('../common/getTagsFromText');
 
 // TODO: calculate tags in childprocess / worker
+// TODO: support stop words from UI
 const stopWords = ['the', 'and', 'for'];
 
 module.exports = function handleRoutes(app) {
@@ -20,6 +21,6 @@ module.exports = function handleRoutes(app) {
 
   // TODO: add support for RSS links
   app.get('/api/rss', (req, res) => {
-    res.status(500).json({ message: 'not yet implemented' });
+    res.status(501).json({ message: 'RSS not yet implemented' });
   });
 };
