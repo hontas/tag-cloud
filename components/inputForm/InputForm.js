@@ -51,12 +51,14 @@ class InputForm extends React.Component {
       <form className="InputForm" onSubmit={this.getTagsFor}>
         <label htmlFor="hash-input">
           Twitter hashtag <span className="strikethrough">or RSS link:</span>
-          <input type="text" id="hash-input" ref={this.setInputRef} />
         </label>
-        <button type="sumbit">
-          Hämta
-          {isLoading && <Spinner />}
-        </button>
+        <div className="input-group">
+          <input type="text" id="hash-input" ref={this.setInputRef} autoComplete="off" />
+          <button type="sumbit">
+            Hämta taggmoln
+            {isLoading && <Spinner />}
+          </button>
+        </div>
         {error && <p className="error">Error: {error}</p>}
         <style jsx>
           {`
@@ -64,29 +66,44 @@ class InputForm extends React.Component {
               padding: 1em;
               padding-bottom: 0.5em;
             }
-            input {
-              border: 1px gray;
+            label {
+              display: block;
+            }
+            input,
+            button {
               border-radius: 5px;
               font-size: 1em;
-              margin-bottom: 0.5em;
               padding: 0.5em;
               width: 100%;
+            }
+            input {
+              border: 1px gray;
+              margin-bottom: 0.5em;
             }
             button {
               background: transparent;
               border: 1px solid aquamarine;
-              border-radius: 5px;
               color: white;
-              font-size: 1em;
               display: block;
-              padding: 0.5em;
-              width: 100%;
             }
             .error {
               color: pink;
             }
             .strikethrough {
               text-decoration: line-through;
+            }
+
+            @media (min-width: 800px) {
+              .input-group {
+                display: flex;
+              }
+              input {
+                border-radius: 5px 0 0 5px;
+                margin-bottom: 0;
+              }
+              button {
+                border-radius: 0 5px 5px 0;
+              }
             }
           `}
         </style>

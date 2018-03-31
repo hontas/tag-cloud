@@ -13,8 +13,15 @@ export default () => (
         }
         h1 {
           font-size: 6.5vw;
+          margin: 0;
           text-align: center;
           text-shadow: 0 0 1.5em darkgreen;
+        }
+
+        @media (min-width: 800px) {
+          h1 {
+            font-size: 3em;
+          }
         }
       `}
     </style>
