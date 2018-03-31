@@ -3,13 +3,14 @@ const cleanTweet = require('./utils/cleanTweet');
 const getTagsFromText = require('../common/getTagsFromText');
 
 // TODO: calculate tags in childprocess / worker
+const stopWords = ['the', 'and', 'for'];
 
 module.exports = function handleRoutes(app) {
   app.get('/api/twitter', (req, res) => {
     twitterApi
       .search(req.query.q)
       .then((tweets) => tweets.map(cleanTweet).join(' '))
-      .then((text) => getTagsFromText(text))
+      .then((text) => getTagsFromText(text, { stopWords }))
       .then((tags) => res.json(tags.slice(0, 100)))
       .catch((reason) => {
         const { statusCode, error } = reason;
