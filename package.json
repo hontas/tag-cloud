@@ -10,7 +10,11 @@
     "dev": "nodemon -w server.js -w server server.js",
     "build": "next build",
     "start": "NODE_ENV=production node server.js",
-    "deploy": "now"
+    "deploy": "now",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,json,md}": ["prettier --write", "git add"]
   },
   "repository": {
     "type": "git",
