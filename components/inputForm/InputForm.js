@@ -65,6 +65,7 @@ class InputForm extends React.Component {
             .InputForm {
               padding: 1em;
               padding-bottom: 0.5em;
+              width: 100%;
             }
             label {
               display: block;

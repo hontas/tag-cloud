@@ -1,6 +1,6 @@
 const natural = require('natural');
 
-const tokenizer = new natural.WordTokenizer();
+const tokenizer = new natural.CaseTokenizer();
 
 function identity(x) {
   return x;

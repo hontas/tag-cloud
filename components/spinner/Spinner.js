@@ -34,8 +34,8 @@ const Spinner = ({ className }) => (
           margin-top: -0.5em;
           margin-left: -0.5em;
           border-radius: 50%;
-          border: 2px solid #ccc;
-          border-top-color: #333;
+          border: 2px solid aquamarine;
+          border-top-color: white;
           animation: spinner 0.6s linear infinite;
         }
       `}

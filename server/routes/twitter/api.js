@@ -4,6 +4,8 @@ const consumerKey = process.env.TWITTER_CONSUMER_KEY;
 const consumerSecret = process.env.TWITTER_CONSUMER_SECRET;
 let token = process.env.TWITTER_TOKEN;
 
+// TODO: get full tweets
+
 if (!consumerKey || !consumerSecret) {
   throw Error('Twitter environment variable(s) missing');
 }
@@ -27,8 +29,6 @@ function getAuthToken() {
       return token;
     })
     .catch((reason) => {
-      // eslint-disable-next-line
-      console.log('Object.keys(reason)', Object.keys(reason));
       throw Error(`Could not get twitter auth token. ${reason}`);
     });
 }
@@ -48,10 +48,13 @@ async function search(hashtag) {
       return json.statuses.map((status) => status.text);
     })
     .catch((reason) => {
-      const { statusCode, error } = reason;
+      // todo: handle RequestError
+      // if auth fail re-authenticate
+      // eslint-disable-next-line
+      const { statusCode, error, message } = reason;
       return Promise.reject({
         statusCode,
-        error: JSON.parse(error),
+        error: message ? { message } : JSON.parse(error),
       });
     });
 }

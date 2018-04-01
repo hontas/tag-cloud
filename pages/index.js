@@ -6,9 +6,7 @@ import TagCloud from '../components/tagCloud/TagCloud.js';
 import Layout from '../components/Layout';
 
 class IndexPage extends React.Component {
-  state = {
-    tags: [],
-  };
+  state = { tags: [] };
 
   fetchTagsFor = (value) => {
     return fetchTags(value).then((tags) => this.setState({ tags }));

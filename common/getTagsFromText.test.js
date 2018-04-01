@@ -28,6 +28,11 @@ describe('getTagsFromText', () => {
     expect(result).to.eql([{ value: 'hey', count: 3 }]);
   });
 
+  it('should support swedish', () => {
+    const result = getTagsFromText('ögon');
+    expect(result).to.eql([{ value: 'ögon', count: 1 }]);
+  });
+
   it('should exclude stop-words', () => {
     const result = getTagsFromText('the fox jumped over the tree', { stopWords: ['the'] });
     expect(result).to.eql([
