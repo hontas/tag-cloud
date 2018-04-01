@@ -18,6 +18,7 @@ npm run dev
 * Testing (not too much, mostly integration)
 * Break out components
 * Use stylus + CSS modules
+* Manage style related variables
 * ServiceWorker
 * Improve error handling, fetchWrapper, server
 * Calculate tags in child process

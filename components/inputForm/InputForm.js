@@ -82,7 +82,7 @@ class InputForm extends React.Component {
               margin-bottom: 0.5em;
             }
             button {
-              background: transparent;
+              background: rgba(200, 230, 255, 0.25);
               border: 1px solid aquamarine;
               color: white;
               display: block;
