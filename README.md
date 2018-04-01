@@ -24,6 +24,7 @@ npm run dev
 * Add logger
 * Calculate tags in child process
 * Use forever or PM2
+* Authenticate server - client traffic
 
 https://expressjs.com/en/advanced/best-practice-security.html
 https://expressjs.com/en/advanced/best-practice-performance.html
