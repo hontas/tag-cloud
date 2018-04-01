@@ -12,7 +12,7 @@ const TagCloud = ({ tags = [] }) => (
         }}
         renderer={tagRenderer}
         minSize={3}
-        maxSize={12}
+        maxSize={10}
         tags={tags}
       />
     ) : (
