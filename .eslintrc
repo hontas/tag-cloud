@@ -1,8 +1,9 @@
 {
-    "extends": ["airbnb", "eslint-config-prettier"],
+    "extends": ["airbnb", "eslint-config-prettier", "plugin:security/recommended"],
     "parser": "babel-eslint",
     "plugins": [
-        "mocha"
+        "mocha",
+        "security"
     ],
     "rules": {
         "arrow-body-style": 0,
