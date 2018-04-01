@@ -14,10 +14,10 @@ npm run dev
 
 ## TODO
 
-* A while bunch of stuff
+* A whole bunch of stuff
 * Testing (not too much, mostly integration)
-* Bryt ut komponenter
-* Använda stylus + CSS modules
+* Break out components
+* Use stylus + CSS modules
 * ServiceWorker
-* Förbätta felhanteringen, fetchWrapper, server
-* Beräkna taggar i childprocess
+* Improve error handling, fetchWrapper, server
+* Calculate tags in child process
