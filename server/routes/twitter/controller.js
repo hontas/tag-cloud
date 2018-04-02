@@ -5,7 +5,7 @@ const { isHashTag } = require('../../../common/validators');
 
 // TODO: calculate tags in childprocess / worker
 // TODO: support stop words from user
-const stopWords = ['the', 'and', 'for', 'that', 'att', 'för', 'och'];
+const stopWords = ['the', 'and', 'for', 'that', 'att', 'för', 'och', 'som', 'den', 'det', 'har', 'till'];
 
 function get(req, res) {
   const query = req.query.q;
