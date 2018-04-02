@@ -1,5 +1,5 @@
 import { getJSON } from './fetchWrapper';
-import { isHashTag } from '../common/validators';
+import { isHashTag } from '../../common/validators';
 
 export default function fetchTags(value) {
   if (isHashTag(value)) {

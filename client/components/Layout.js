@@ -3,8 +3,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Head from 'next/head';
 
-import Footer from '../components/footer/Footer.js';
-import Header from '../components/header/Header.js';
+import Footer from './footer/Footer.js';
+import Header from './header/Header.js';
 
 promiseFinally.shim();
 

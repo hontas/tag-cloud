@@ -1,9 +1,9 @@
 import React from 'react';
 
-import fetchTags from '../api/fetchTags';
-import InputForm from '../components/inputForm/InputForm.js';
-import TagCloud from '../components/tagCloud/TagCloud.js';
-import Layout from '../components/Layout';
+import fetchTags from '../client/services/fetchTags';
+import InputForm from '../client/components/inputForm/InputForm.js';
+import TagCloud from '../client/components/tagCloud/TagCloud.js';
+import Layout from '../client/components/Layout';
 
 class IndexPage extends React.Component {
   state = { tags: [] };

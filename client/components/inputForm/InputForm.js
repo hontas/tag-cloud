@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { isHashTag } from '../../common/validators';
+import { isHashTag } from '../../../common/validators';
 import Spinner from '../spinner/Spinner';
 
 // TODO: break out input and button to its own components
