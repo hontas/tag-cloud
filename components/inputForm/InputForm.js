@@ -13,7 +13,7 @@ class InputForm extends React.Component {
 
   getTagsFor = (evt) => {
     evt.preventDefault();
-    const { value } = this.inputElement;
+    const { value } = this.textInput.current;
 
     // TODO handle and validate RSS-link
 
@@ -41,9 +41,7 @@ class InputForm extends React.Component {
       });
   };
 
-  setInputRef = (node) => {
-    this.inputElement = node;
-  };
+  textInput = React.createRef();
 
   render() {
     const { error, isLoading } = this.state;
@@ -53,13 +51,13 @@ class InputForm extends React.Component {
           Twitter hashtag <span className="strikethrough">or RSS link:</span>
         </label>
         <div className="input-group">
-          <input type="text" id="hash-input" ref={this.setInputRef} autoComplete="off" />
+          <input type="text" id="hash-input" ref={this.textInput} autoComplete="off" />
           <button type="sumbit">
             Hämta taggmoln
             {isLoading && <Spinner />}
           </button>
         </div>
-        {error && <p className="error">Error: {error}</p>}
+        {error && <p className="error">{error}</p>}
         <style jsx>
           {`
             .InputForm {
