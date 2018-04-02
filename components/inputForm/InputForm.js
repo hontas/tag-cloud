@@ -27,7 +27,7 @@ class InputForm extends React.Component {
     this.props
       .fetchTagsFor(value)
       .then(() => {
-        this.inputElement.value = '';
+        this.textInput.current.value = '';
         this.setState({
           error: null,
           isLoading: false,
@@ -47,17 +47,21 @@ class InputForm extends React.Component {
     const { error, isLoading } = this.state;
     return (
       <form className="InputForm" onSubmit={this.getTagsFor}>
-        <label htmlFor="hash-input">
+        <label htmlFor="hashtag-input">
           Twitter hashtag <span className="strikethrough">or RSS link:</span>
         </label>
         <div className="input-group">
-          <input type="text" id="hash-input" ref={this.textInput} autoComplete="off" />
-          <button type="sumbit">
+          <input type="text" id="hashtag-input" data-test="hashtag-input" ref={this.textInput} autoComplete="off" />
+          <button type="sumbit" data-test="submit-button">
             Hämta taggmoln
             {isLoading && <Spinner />}
           </button>
         </div>
-        {error && <p className="error">{error}</p>}
+        {error && (
+          <p className="error" data-test="validation-error">
+            {error}
+          </p>
+        )}
         <style jsx>
           {`
             .InputForm {

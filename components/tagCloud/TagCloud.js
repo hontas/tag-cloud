@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { TagCloud as ReactTagCloud } from 'react-tagcloud';
 
 const TagCloud = ({ tags = [] }) => (
-  <div className="TagCloud">
+  <div className="TagCloud" data-test="tag-cloud">
     {tags.length > 0 ? (
       <ReactTagCloud
         colorOptions={{

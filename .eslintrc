@@ -3,6 +3,7 @@
     "parser": "babel-eslint",
     "plugins": [
         "mocha",
+        "cypress",
         "security"
     ],
     "rules": {
@@ -32,6 +33,7 @@
     },
     "env": {
       "browser": true,
-      "mocha": true
+      "mocha": true,
+      "cypress/globals": true
     }
 }
