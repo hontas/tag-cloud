@@ -1,4 +1,4 @@
-const twitterController = require('./twitter/controller');
+const twitterController = require('./resources/twitter/controller');
 
 module.exports = function handleRoutes(app) {
   app.get('/api/twitter', twitterController.get);
