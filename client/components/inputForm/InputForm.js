@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
+
 import { isHashTag } from '../../../common/validators';
 import Spinner from '../spinner/Spinner';
 
@@ -44,9 +46,10 @@ class InputForm extends React.Component {
   textInput = React.createRef();
 
   render() {
+    const { className } = this.props;
     const { error, isLoading } = this.state;
     return (
-      <form className="InputForm" onSubmit={this.getTagsFor}>
+      <form className={classNames('InputForm', className)} onSubmit={this.getTagsFor}>
         <label className="InputForm__label" htmlFor="hashtag-input">
           Twitter hashtag <span className="strikethrough">or RSS link:</span>
         </label>
@@ -124,6 +127,7 @@ class InputForm extends React.Component {
 
 InputForm.propTypes = {
   fetchTagsFor: PropTypes.func.isRequired,
+  className: PropTypes.string,
 };
 
 export default InputForm;

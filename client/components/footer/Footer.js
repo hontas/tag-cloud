@@ -1,7 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
-export default () => (
-  <footer className="Footer">
+const Footer = ({ className }) => (
+  <footer className={classNames('Footer', className)}>
     <div className="Footer__wrapper">
       <a className="Footer__link" href="mailto:lundin.pontus@gmail.com">
         lundin.pontus@gmail.com
@@ -32,3 +34,9 @@ export default () => (
     </style>
   </footer>
 );
+
+Footer.propTypes = {
+  className: PropTypes.string,
+};
+
+export default Footer;

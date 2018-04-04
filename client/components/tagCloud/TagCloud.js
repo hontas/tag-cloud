@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import { TagCloud as ReactTagCloud } from 'react-tagcloud';
 
-const TagCloud = ({ tags = [] }) => (
-  <div className="TagCloud" data-test="tag-cloud">
+const TagCloud = ({ className, tags = [] }) => (
+  <div className={classNames('TagCloud', className)} data-test="tag-cloud">
     {tags.length > 0 ? (
       <ReactTagCloud
         colorOptions={{
@@ -55,6 +56,7 @@ function tagRenderer(tag, size, color) {
 }
 
 TagCloud.propTypes = {
+  className: PropTypes.string,
   tags: PropTypes.arrayOf(PropTypes.object),
 };
 

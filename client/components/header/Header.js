@@ -1,10 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
 const getPrimaryTextShadow = (blur) => `0 0 ${blur} rgba(35, 72, 60, 0.5)`;
 const secondaryTextShadow = '0 0 4px rgba(35, 72, 60, 0.5)';
 
-export default () => (
-  <header className="Header">
+const Header = ({ className }) => (
+  <header className={classNames('Header', className)}>
     <h1 className="Header__title">Tag Cloud by Pontus Lundin</h1>
     <style jsx>
       {`
@@ -32,3 +34,9 @@ export default () => (
     </style>
   </header>
 );
+
+Header.propTypes = {
+  className: PropTypes.string,
+};
+
+export default Header;

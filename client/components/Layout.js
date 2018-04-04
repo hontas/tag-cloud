@@ -1,15 +1,16 @@
-import promiseFinally from 'promise.prototype.finally';
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import Head from 'next/head';
+import promiseFinally from 'promise.prototype.finally';
 
 import Footer from './footer/Footer.js';
 import Header from './header/Header.js';
 
 promiseFinally.shim();
 
-const Layout = ({ children, title = 'Tag Cloud' }) => (
-  <div className="Layout">
+const Layout = ({ className, children, title = 'Tag Cloud' }) => (
+  <div className={classNames('Layout', className)}>
     <Head>
       <title>{title}</title>
       <meta charSet="utf-8" />
@@ -68,8 +69,9 @@ const Layout = ({ children, title = 'Tag Cloud' }) => (
 );
 
 Layout.propTypes = {
-  title: PropTypes.string,
+  className: PropTypes.string,
   children: PropTypes.oneOfType([PropTypes.element, PropTypes.arrayOf(PropTypes.element)]),
+  title: PropTypes.string,
 };
 
 export default Layout;
