@@ -9,7 +9,7 @@ import Header from './header/Header.js';
 promiseFinally.shim();
 
 const Layout = ({ children, title = 'Tag Cloud' }) => (
-  <div className="app">
+  <div className="Layout">
     <Head>
       <title>{title}</title>
       <meta charSet="utf-8" />
@@ -20,13 +20,10 @@ const Layout = ({ children, title = 'Tag Cloud' }) => (
     <Footer />
     <style jsx>
       {`
-        .app {
+        .Layout {
           display: flex;
           flex-direction: column;
           height: 100%;
-        }
-        header {
-          padding: 1em;
         }
       `}
     </style>
@@ -59,7 +56,11 @@ const Layout = ({ children, title = 'Tag Cloud' }) => (
         }
 
         a {
-          color: whitesmoke;
+          color: inherit;
+        }
+
+        .strikethrough {
+          text-decoration: line-through;
         }
       `}
     </style>

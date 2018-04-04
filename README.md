@@ -22,9 +22,9 @@ npm run e2e # cypress.io
 
 ## TODO
 
-* A whole bunch of stuff
 * Testing - not too much, mostly integration ;)
 * Break out components
+* Improve form UI states, error, loading etc.
 * Use stylus + CSS modules
 * Manage style related variables
 * ServiceWorker

@@ -17,16 +17,24 @@ class IndexPage extends React.Component {
 
     return (
       <Layout>
-        <main>
-          <InputForm fetchTagsFor={this.fetchTagsFor} />
-          <TagCloud tags={tags} />
-        </main>
+        <div className="Index">
+          <main className="Index__main">
+            <InputForm fetchTagsFor={this.fetchTagsFor} />
+            <TagCloud tags={tags} />
+          </main>
+        </div>
         <style jsx>
           {`
-            main {
+            .Index {
+              flex: 1;
+              display: flex;
+              justify-content: center;
+            }
+            .Index__main {
               flex: 1;
               display: flex;
               flex-direction: column;
+              max-width: 800px;
             }
           `}
         </style>

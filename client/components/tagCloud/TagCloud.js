@@ -16,7 +16,7 @@ const TagCloud = ({ tags = [] }) => (
         tags={tags}
       />
     ) : (
-      <p className="no-tags-msg">No tags to display</p>
+      <p className="TagCloud__no-tags-msg">No tags to display</p>
     )}
     <style jsx>
       {`
@@ -27,7 +27,7 @@ const TagCloud = ({ tags = [] }) => (
           padding-top: 0.5em;
           overflow: auto;
         }
-        .no-tags-msg {
+        .TagCloud__no-tags-msg {
           color: darkgray;
         }
       `}

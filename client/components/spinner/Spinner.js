@@ -5,8 +5,8 @@ import classNames from 'classnames';
 // TODO: support passing size
 
 const Spinner = ({ className }) => (
-  <div className={classNames('spinner', className)}>
-    <div className="animation" />
+  <div className={classNames('Spinner', className)}>
+    <div className="Spinner__animation" />
     <style jsx>
       {`
         @keyframes spinner {
@@ -15,7 +15,7 @@ const Spinner = ({ className }) => (
           }
         }
 
-        .spinner {
+        .Spinner {
           display: inline-block;
           margin-left: 0.5em;
           position: relative;
@@ -23,7 +23,7 @@ const Spinner = ({ className }) => (
           height: 1em;
         }
 
-        .animation:before {
+        .Spinner__animation:before {
           content: '';
           box-sizing: border-box;
           position: absolute;

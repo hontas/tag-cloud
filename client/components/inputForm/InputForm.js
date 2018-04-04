@@ -47,18 +47,25 @@ class InputForm extends React.Component {
     const { error, isLoading } = this.state;
     return (
       <form className="InputForm" onSubmit={this.getTagsFor}>
-        <label htmlFor="hashtag-input">
+        <label className="InputForm__label" htmlFor="hashtag-input">
           Twitter hashtag <span className="strikethrough">or RSS link:</span>
         </label>
-        <div className="input-group">
-          <input type="text" id="hashtag-input" data-test="hashtag-input" ref={this.textInput} autoComplete="off" />
-          <button type="sumbit" data-test="submit-button">
+        <div className="InputForm__input-group">
+          <input
+            className="InputForm__input"
+            type="text"
+            id="hashtag-input"
+            data-test="hashtag-input"
+            ref={this.textInput}
+            autoComplete="off"
+          />
+          <button className="InputForm__button" type="sumbit" data-test="submit-button">
             Hämta taggmoln
             {isLoading && <Spinner />}
           </button>
         </div>
         {error && (
-          <p className="error" data-test="validation-error">
+          <p className="InputForm__error" data-test="validation-error">
             {error}
           </p>
         )}
@@ -69,42 +76,42 @@ class InputForm extends React.Component {
               padding-bottom: 0.5em;
               width: 100%;
             }
-            label {
+
+            .InputForm__label {
               display: block;
             }
-            input,
-            button {
+
+            .InputForm__input,
+            .InputForm__button {
               border-radius: 5px;
               font-size: 1em;
               padding: 0.5em;
               width: 100%;
             }
-            input {
+            .InputForm__input {
               border: 1px gray;
               margin-bottom: 0.5em;
             }
-            button {
+            .InputForm__button {
               background: rgba(200, 230, 255, 0.25);
               border: 1px solid aquamarine;
               color: white;
               display: block;
             }
-            .error {
+
+            .InputForm__error {
               color: pink;
-            }
-            .strikethrough {
-              text-decoration: line-through;
             }
 
             @media (min-width: 800px) {
-              .input-group {
+              .InputForm__input-group {
                 display: flex;
               }
-              input {
+              .InputForm__input {
                 border-radius: 5px 0 0 5px;
                 margin-bottom: 0;
               }
-              button {
+              .InputForm__button {
                 border-radius: 0 5px 5px 0;
               }
             }
